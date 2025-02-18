@@ -1,5 +1,5 @@
 import { response, request } from "express";
-import { hash } from "argon2";
+import { hash, verify } from "argon2";
 import User from "./user.model.js";
 
 export const updateUser = async (req, res = response) => {
@@ -15,10 +15,8 @@ export const updateUser = async (req, res = response) => {
             });
         }
 
-        
         data.email = existingUser.email;
 
-        
         if (newPassword) {
             if (!password) {
                 return res.status(400).json({
@@ -26,8 +24,8 @@ export const updateUser = async (req, res = response) => {
                     msg: 'Debe ingresar su contraseña actual para cambiarla'
                 });
             }
-            
-            const esIgual = await hash(password) === existingUser.password;
+
+            const esIgual = await verify(existingUser.password, password);
             if (!esIgual) {
                 return res.status(400).json({
                     success: false,
