@@ -4,11 +4,14 @@ import { existenteEmail } from "../helpers/db-validator.js";
 
 
 export const registerValidator = [
+    
     body("name", "The name is required").not().isEmpty(),
     body("surname", "The surname is required").not().isEmpty(),
     body("email", "You must enter a valid email").not().isEmpty().isEmail(),
     body("email").custom(existenteEmail),
-    body("password", "Password must be at least 8 characters").isLength({ min: 8 }),
+    body("password")
+        .isLength({ min: 8 })
+        .withMessage("Password must be at least 8 characters long"),
     validarCampos
 ];
 

@@ -57,6 +57,7 @@ export const login = async (req, res) => {
  
 export const register = async (req, res) => {
     try {
+        console.log("Hola");
         const data = req.body;
  
         const encryptedPassword = await hash (data.password);
@@ -77,13 +78,12 @@ export const register = async (req, res) => {
         });
  
     } catch (error) {
-       
         console.log(error);
- 
+    
         return res.status(500).json({
             message: "User registration failed",
-            error: err.message
-        })
- 
+            error: error.message 
+        });
     }
+    
 }
