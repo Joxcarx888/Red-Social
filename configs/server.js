@@ -8,7 +8,7 @@ import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
-import categoryRoutes from '../src/categorys/category.routes.js';
+import categoryRoutes from '../src/categories/category.routes.js';
 
 
 const middlewares = (app) => {

@@ -2,6 +2,7 @@
 
 import mongoose from "mongoose";
 import Usuario from "../src/users/user.model.js";
+import Category from "../src/categories/category.model.js"; // Importa el modelo de categoría
 import { hash } from "argon2";
 
 export const dbConnection = async () => {
@@ -21,7 +22,7 @@ export const dbConnection = async () => {
             try {
                 const adminExists = await Usuario.findOne({ role: "ADMIN" });
                 if (!adminExists) {
-                    const adminPassword = await hash("12345678"); 
+                    const adminPassword = await hash("12345678");
                     await Usuario.create({
                         name: "Admin",
                         surname: "User",
@@ -30,12 +31,22 @@ export const dbConnection = async () => {
                         password: adminPassword,
                         role: "ADMIN"
                     });
-                    console.log(" Usuario administrador creado");
+                    console.log("Usuario administrador creado");
                 } else {
-                    console.log(" Usuario administrador ya existe");
+                    console.log("Usuario administrador ya existe");
                 }
+
+
+                const defaultCategory = await Category.findOne({ name: "default" });
+                if (!defaultCategory) {
+                    await Category.create({ name: "default" });
+                    console.log("Categoría 'default' creada");
+                } else {
+                    console.log("Categoría 'default' ya existe");
+                }
+
             } catch (error) {
-                console.error("Error al verificar/crear el admin:", error);
+                console.error("Error al verificar/crear admin o categoría:", error);
             }
         });
 
