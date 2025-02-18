@@ -7,7 +7,8 @@ import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import authRoutes from '../src/auth/auth.routes.js';
-import userRoutes from '../src/users/user.routes.js'
+import userRoutes from '../src/users/user.routes.js';
+import categoryRoutes from '../src/categorys/category.routes.js';
 
 
 const middlewares = (app) => {
@@ -22,6 +23,7 @@ const middlewares = (app) => {
 const routes = (app) =>{
     app.use('/facebook/v1/auth', authRoutes);
     app.use('/facebook/v1/users', userRoutes);
+    app.use('/facebook/v1/categories', categoryRoutes);
 }
 
 const conectarDB = async () => {
