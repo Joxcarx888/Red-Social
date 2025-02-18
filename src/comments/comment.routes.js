@@ -7,6 +7,13 @@ import { existeCommentById } from "../helpers/db-validator.js";
 
 const router = Router();
 
+router.get(
+    "/",
+    [
+        validarJWT
+    ],
+    listarCommentsUsuario
+);
 
 router.delete(
     "/:id",
