@@ -10,6 +10,7 @@ import authRoutes from '../src/auth/auth.routes.js';
 import userRoutes from '../src/users/user.routes.js';
 import categoryRoutes from '../src/categories/category.routes.js';
 import commentRoutes from '../src/comments/comment.routes.js'
+import publicationRoutes from '../src/publications/publication.routes.js';
 
 
 const middlewares = (app) => {
@@ -26,6 +27,7 @@ const routes = (app) =>{
     app.use('/facebook/v1/users', userRoutes);
     app.use('/facebook/v1/categories', categoryRoutes);
     app.use('/facebook/v1/comments',commentRoutes);
+    app.use('/facebook/v1/post', publicationRoutes);
 }
 
 const conectarDB = async () => {

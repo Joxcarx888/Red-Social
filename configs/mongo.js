@@ -2,7 +2,7 @@
 
 import mongoose from "mongoose";
 import Usuario from "../src/users/user.model.js";
-import Category from "../src/categories/category.model.js"; // Importa el modelo de categoría
+import Category from "../src/categories/category.model.js"; 
 import { hash } from "argon2";
 
 export const dbConnection = async () => {

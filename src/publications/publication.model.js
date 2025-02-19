@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const PostSchema = new Schema(
+const PublicationSchema = new Schema(
   {
     title: {
       type: String,
@@ -43,4 +43,4 @@ const PostSchema = new Schema(
   }
 );
 
-export default model("Post", PostSchema);
+export default model("Publication", PublicationSchema);
