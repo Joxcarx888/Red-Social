@@ -1,6 +1,7 @@
 import User from '../users/user.model.js';
 import Category from '../categories/category.model.js';
 import Comment from '../comments/comment.model.js';
+import Publication from '../publications/publication.model.js';
 
 
 export const existenteEmail = async (email = '') =>{

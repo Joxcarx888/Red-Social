@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "67b3b6a439a4cae69a9e2cfa"
+  },
+  "name": "Admin",
+  "surname": "User",
+  "username": "admin",
+  "email": "admin@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$pl8XaoX4AeseEAX9EvkHXA$FDhT0E2KhtMEv0eXnoFcXFbuNX6F21qLlAA7r5D0o6E",
+  "role": "ADMIN",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T22:22:28.941Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T22:22:28.941Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b3c8a4dbf73efb7af752bb"
+  },
+  "name": "Juan",
+  "surname": "Pérez",
+  "username": "juanperez",
+  "email": "juanperez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Iq9egTvYFNeokQ/P74D0Og$9PabKpMxtIJfVm+80Js2z1yfqXy2/J76RbZMiRXH6rs",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T23:39:16.431Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T23:39:16.431Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b48d58c21527e36171815e"
+  },
+  "name": "Juan",
+  "surname": "Pérez",
+  "username": "JP235",
+  "email": "jp@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$hnpYJMaQFpNP+DJ7Ra6YYQ$FFy7UXjfinX5pz5NJXT0YIjz7B5NgXRQ8rQ9ZF0dT0I",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-18T13:38:32.508Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T01:55:00.518Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b48e0600e2e5660fcbe4a1"
+  },
+  "name": "Luis",
+  "surname": "Mejia",
+  "username": "Mejia12",
+  "email": "jp2@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$jOKofLOA1F53jHWATuzeuQ$/rnNAfY1QrkXzMPbotFNpaOz6xRyapT5MW9Y3SfSInU",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-18T13:41:27.002Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T15:22:47.274Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b685d1d1769b8f26c58335"
+  },
+  "name": "Juan",
+  "surname": "Pérez",
+  "username": "JP23",
+  "email": "jp23@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$JC8oE4oqTJB9w/xUAUbP/A$0k2hIXNbFOffpZxl8WPZTaXAqo5t5TpijfT+R6Z+QlY",
+  "role": "USER",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-20T01:30:57.375Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T01:30:57.375Z"
+  }
+}]

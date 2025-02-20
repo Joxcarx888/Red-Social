@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "67b66a6d13623a28225758c4"
+  },
+  "name": "default",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-19T23:34:05.208Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-19T23:34:05.208Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b4b2b4745942f941a545d5"
+  },
+  "name": "Noticias",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-18T16:17:56.794Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T16:17:56.794Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b4b2cb745942f941a545e0"
+  },
+  "name": "Deportes",
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-18T16:18:19.596Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T16:19:52.355Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b4b53ec1dd1f0d2b668e23"
+  },
+  "name": "Belleza",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-18T16:28:46.850Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T16:28:46.850Z"
+  }
+}]

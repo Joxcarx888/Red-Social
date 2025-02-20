@@ -1,5 +1,7 @@
 import Publication from "./publication.model.js";  
 import Category from "../categories/category.model.js";
+import Comment from "../comments/comment.model.js";
+
 
 export const savePost = async (req, res) => {
     try {
@@ -48,36 +50,32 @@ export const savePost = async (req, res) => {
 
 export const listPosts = async (req, res) => {
     try {
-        const publications = await Publication.find()
-            .populate("user", "name")
-            .populate("category", "name")
-            .populate({ path: "comments", select: "comment" });
-
-        if (publications.length === 0) {
-            return res.status(404).json({
-                success: false,
-                message: "No hay publicaciones disponibles",
-            });
-        }
-
-        res.json({
-            success: true,
-            publications,
-        });
+      const posts = await Publication.find({ status: true })
+        .populate("user", "name")
+        .populate("category", "name")
+        .populate({ path: "comments", select: "comment" });
+  
+      res.json({
+        success: true,
+        posts,
+      });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({
-            success: false,
-            message: "Error al obtener las publicaciones",
-        });
+      res.status(500).json({
+        success: false,
+        message: "Error al obtener las publicaciones",
+        error,
+      });
     }
-};
+  };
+  
 
 export const updatePost = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, text, categoryName } = req.body;
         const userId = req.usuario._id;
+        console.log("ID recibido:", id);
+
 
         if (!title && !text && !categoryName) {
             return res.status(400).json({
@@ -159,6 +157,52 @@ export const deletePost = async (req, res) => {
             success: false,
             message: "Error al eliminar la publicación",
             error: error.message,
+        });
+    }
+};
+
+export const addCommentToPost = async (req, res) => {
+    try {
+        const { id } = req.params; 
+        const { comment } = req.body;
+        const authenticatedUser = req.usuario; 
+
+        if (!authenticatedUser) {
+            return res.status(403).json({
+                success: false,
+                message: "No tienes permisos para comentar"
+            });
+        }
+
+        const publication = await Publication.findById(id);
+        if (!publication) {
+            return res.status(404).json({
+                success: false,
+                message: "Publicación no encontrada"
+            });
+        }
+
+        const newComment = new Comment({
+            comment,
+            user: authenticatedUser._id
+        });
+
+        await newComment.save();
+
+        publication.comments.push(newComment._id);
+        await publication.save();
+
+        res.status(201).json({
+            success: true,
+            message: "Comentario agregado exitosamente",
+            comment: newComment
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "Error al agregar el comentario",
+            error
         });
     }
 };

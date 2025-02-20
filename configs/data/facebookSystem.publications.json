@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "67b66d55c118fa4b516529bc"
+  },
+  "title": "Luto Mundial en el catolicismo",
+  "text": "Muere el papa por enfermedad pulmonar",
+  "user": {
+    "$oid": "67b3b6a439a4cae69a9e2cfa"
+  },
+  "category": {
+    "$oid": "67b4b2b4745942f941a545d5"
+  },
+  "comments": [
+    {
+      "$oid": "67b67063d1769b8f26c582f8"
+    },
+    {
+      "$oid": "67b68487d1769b8f26c5831c"
+    }
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-19T23:46:29.558Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T01:25:27.970Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b683bed1769b8f26c58314"
+  },
+  "title": "Max Verstappen se consagra campeon por 4ta Vez",
+  "text": "El piloto de Red Bull Racing consigue su corona en el GP de Las Vegas al qeudar 5to",
+  "user": {
+    "$oid": "67b48d58c21527e36171815e"
+  },
+  "category": {
+    "$oid": "67b4b2cb745942f941a545e0"
+  },
+  "comments": [
+    {
+      "$oid": "67b689d0d1769b8f26c58343"
+    },
+    {
+      "$oid": "67b68a84d1769b8f26c58352"
+    }
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-20T01:22:06.593Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-20T01:51:00.696Z"
+  }
+}]

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { savePost, updatePost, listPosts, deletePost } from "./publication.controller.js";
+import { savePost, updatePost, listPosts, deletePost, addCommentToPost } from "./publication.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 import { existentePublication } from "../helpers/db-validator.js";
@@ -31,9 +31,6 @@ router.put(
 );
 
 router.get("/", 
-    [
-        validarJWT
-    ],
     listPosts
 );
 
@@ -47,5 +44,14 @@ router.delete(
   ],
   deletePost
 );
+
+router.post(
+  "/addcomment/:id", 
+  [
+    validarJWT,
+  ], 
+  addCommentToPost
+);
+
 
 export default router;
